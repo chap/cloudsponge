@@ -1,0 +1,16 @@
+HISTORY
+Manifest.txt
+Rakefile
+README
+TODO
+lib/cloudsponge
+lib/cloudsponge/event.rb
+lib/cloudsponge/cs_exception.rb
+lib/cloudsponge/utility.rb
+lib/cloudsponge/contact.rb
+lib/cloudsponge/contact_importer.rb
+lib/cloudsponge.rb
+test/test_cs_exception.rb
+test/test_utility.rb
+test/test_contact.rb
+test/test_contact_importer.rb

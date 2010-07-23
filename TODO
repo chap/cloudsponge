@@ -1,0 +1,3 @@
+* Write comprehensive tests
+* Add interactive command line example program
+* Add xml decoding in no JSON lib is available.
