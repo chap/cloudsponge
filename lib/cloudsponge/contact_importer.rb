@@ -62,7 +62,7 @@ module Cloudsponge
       full_url = generate_poll_url(EVENTS_PATH, import_id)
 
       # get the response from the server and decode it
-      resp = Utility.get_and_decode_response(full_url)
+      resp = Cloudsponge::Utility.get_and_decode_response(full_url)
       # interpret the result
       Event.from_array(resp['events'])
     end
