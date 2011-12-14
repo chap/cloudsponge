@@ -1,9 +1,10 @@
-require File.expand_path(File.dirname(__FILE__) + '/cloudsponge/contact_importer')
-require File.expand_path(File.dirname(__FILE__) + '/cloudsponge/contact')
-require File.expand_path(File.dirname(__FILE__) + '/cloudsponge/event')
-require File.expand_path(File.dirname(__FILE__) + '/cloudsponge/cs_exception')
-require File.expand_path(File.dirname(__FILE__) + '/cloudsponge/utility')
+require 'yajl-ruby'
+require 'multi_json'
+require 'contact_importer'
+require 'contact'
+require 'event'
+require 'cs_exception'
+require 'utility'
 
 module Cloudsponge
-  VERSION = '0.9.6'
 end

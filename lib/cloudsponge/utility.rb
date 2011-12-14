@@ -1,5 +1,5 @@
 module Cloudsponge
-  
+
   require "net/http"
   require "net/https"
   require "uri"
@@ -8,14 +8,14 @@ module Cloudsponge
     require 'json'
   rescue
   end
-  
+
   class Utility
-    
+
     def self.object_to_query(object)
       return object unless object.is_a? Hash
       object.map{ |k,v| "#{URI.encode(k.to_s)}=#{URI.encode(v.to_s)}" }.join('&')
     end
-    
+
     def self.post_and_decode_response(url, params)
       # post the response
       response = post_url(url, params)
@@ -27,7 +27,7 @@ module Cloudsponge
       response = get_url(full_url)
       decode_response(response)
     end
-    
+
     def self.decode_response(response)
       if response.code_type == Net::HTTPOK
         # decode the response into an asscoiative array
@@ -40,18 +40,9 @@ module Cloudsponge
     end
 
     def self.decode_response_body(response, format = 'json')
-      # TODO: account for systems that use a different JSON parser. Look for json gem...
       # TODO: implement alternate formats: XML
       object = {'error' => {'message' => 'failed to parse data.', 'code' => 1}}
-      begin
-        object = ActiveSupport::JSON.decode(response)
-      rescue
-        begin 
-          object = JSON.parse(response)
-        rescue
-        end
-      end
-      object
+      object = MultiJson.decode(response)
     end
 
     def self.get_url(url)
