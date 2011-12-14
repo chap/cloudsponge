@@ -1,5 +1,5 @@
 module Cloudsponge
-  class CsException < StandardError 
+  class CsException < StandardError
     attr :code
     def initialize(message, code)
       super(message)

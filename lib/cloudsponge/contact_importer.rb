@@ -97,7 +97,7 @@ module Cloudsponge
       resp
     end
 
-  private
+    private
 
     # invokes the begin import action for the user consent process.
     #   returns the URL of the consent page that the user must use to sign in and grant consent
