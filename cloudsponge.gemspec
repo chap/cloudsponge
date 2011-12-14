@@ -21,5 +21,5 @@ Gem::Specification.new do |s|
   s.add_dependency "yajl-ruby", "~> 1.1.0"
   s.add_dependency "multi_json", "~> 1.0.4"
 
-  s.add_development_dependency "rspec", "~> 2.6.0"
+  s.add_development_dependency "rspec", "~> 2.7.0"
 end

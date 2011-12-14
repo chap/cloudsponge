@@ -2,7 +2,7 @@
 # http://www.cloudsponge.com
 # Copyright (c) 2010 Cloud Copy, Inc.
 # Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
-# 
+#
 # Written by Graeme Rouse
 # graeme@cloudsponge.com
 
@@ -56,7 +56,7 @@ module Cloudsponge
     # returns an array of Cloudsponge::Events with any new event or nil if no new events are available
     def get_events(import_id = nil)
       import_id ||= @import_id
-      
+
       # call to CloudSponge.com for the latest event status and return it
       # create the appropriate url to fetch the contacts
       full_url = generate_poll_url(EVENTS_PATH, import_id)
@@ -96,9 +96,9 @@ module Cloudsponge
 
       resp
     end
-  
+
   private
-  
+
     # invokes the begin import action for the user consent process.
     #   returns the URL of the consent page that the user must use to sign in and grant consent
     #   throws an exception if an invalid service is invoked.
@@ -134,7 +134,7 @@ module Cloudsponge
       # Throws an exception if there was a problem at the server
       Utility.post_and_decode_response(full_url(IMPORT_PATH), authenticated_params(params))
     end
-    
+
     def full_url(path)
       "#{URL_BASE}#{BEGIN_PATH}#{path}"
     end
@@ -163,7 +163,7 @@ module Cloudsponge
       # get the query_string with authentication params and assemble the full url
       "#{URL_BASE}#{path}#{import_id}?#{authenticated_query}"
     end
-  
+
   end
 end
 
@@ -172,5 +172,5 @@ end
 
 
 
-  
+
 

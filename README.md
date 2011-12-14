@@ -25,30 +25,24 @@ CloudSponge.com is THE tool you need to go viral! Here's how it works:
 
 ### Usage:
 
-
     contacts = nil
     importer = Cloudsponge::ContactImporter.new(DOMAIN_KEY, DOMAIN_PASSWORD)
     resp = importer.begin_import('YAHOO')
     puts "Navigate to #{resp[:consent_url]} and complete the authentication process."
     loop do
       events = importer.get_events
-      break unless events.select{ |e| e.is_error? }.empty?
-      unless events.select{ |e| e.is_complete? }.empty?
+      break unless events.select { |e| e.is_error? }.empty?
+      unless events.select { |e| e.is_complete? }.empty?
         contacts = importer.get_contacts
         break
       end
     end
 
-
-## Requirements:
-
-JSON decoding package, currently supported are ActiveSupport::JSON and the JSON gem. Neither of these are required, but if you don't have either on your system, a runtime error will be generated.
-
-## INSTALL:
+## Install
 
 `gem install cloudsponge`
 
-## LICENSE:
+## License
 
 (The MIT License)
 
@@ -72,4 +66,3 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
 CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
