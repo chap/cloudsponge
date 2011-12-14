@@ -1,4 +1,4 @@
-require 'yajl-ruby'
+require 'yajl'
 require 'multi_json'
 require 'contact_importer'
 require 'contact'
