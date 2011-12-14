@@ -1,10 +1,10 @@
 require 'yajl'
 require 'multi_json'
-require 'contact_importer'
-require 'contact'
-require 'event'
-require 'cs_exception'
-require 'utility'
+require 'cloudsponge/contact_importer'
+require 'cloudsponge/contact'
+require 'cloudsponge/event'
+require 'cloudsponge/cs_exception'
+require 'cloudsponge/utility'
 
 module Cloudsponge
 end
