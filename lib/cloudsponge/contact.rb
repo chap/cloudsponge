@@ -1,5 +1,5 @@
 module Cloudsponge
-  
+
   class Contact
     attr_accessor :first_name, :last_name, :emails, :phones
 
