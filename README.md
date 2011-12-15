@@ -1,50 +1,48 @@
-= cs_import
+# Cloudsponge
 
 http://www.cloudsponge.com
 
-== DESCRIPTION:
+## Description
 
 Spread the word with an email invite. Import contacts from Yahoo, Hotmail, MSN, Gmail, AOL, Outlook and Mac Address Book.
 
-== FEATURES/PROBLEMS:
+## Features
 
-=== Problem
+### Problem
+
 Websites looking to grow their customer base usually turn to traditional, paid methods of advertising like search engine keywords, media buys, and generic email lists. Though these methods can be effective at times, they are no match for the testimonial power your very own customers can bring. By encouraging your customers to promote your site to their family and friends, you have an inexpensive advertising channel to acquire customers. If one customer refers their friends, and their friends refer their friends, and so on, and so on, you now have a viral site!
 
-=== Solution
-  CloudSponge.com is THE tool you need to go viral! Here's how it works:
-  * Ask your customers to invite all their friends and family to your site.
-  * Use CloudSponge.com to pull your customer's contact list with their permission.
-  * Send an email invite to all the contacts provided by CloudSponge.com.
-  * Sit back and watch your customer base grow virally!
+### Solution
 
-== SYNOPSIS:
+CloudSponge.com is THE tool you need to go viral! Here's how it works:
 
-  Usage:
-  contacts = nil
-  importer = Cloudsponge::ContactImporter.new(DOMAIN_KEY, DOMAIN_PASSWORD)
-  resp = importer.begin_import('YAHOO')
-  puts "Navigate to #{resp[:consent_url]} and complete the authentication process."
-  loop do
-    events = importer.get_events
-    break unless events.select{ |e| e.is_error? }.empty?
-    unless events.select{ |e| e.is_complete? }.empty?
-      contacts = importer.get_contacts
-      break
+* Ask your customers to invite all their friends and family to your site.
+* Use CloudSponge.com to pull your customer's contact list with their permission.
+* Send an email invite to all the contacts provided by CloudSponge.com.
+* Sit back and watch your customer base grow virally!
+
+## Synopsis
+
+### Usage:
+
+    contacts = nil
+    importer = Cloudsponge::ContactImporter.new(DOMAIN_KEY, DOMAIN_PASSWORD)
+    resp = importer.begin_import('YAHOO')
+    puts "Navigate to #{resp[:consent_url]} and complete the authentication process."
+    loop do
+      events = importer.get_events
+      break unless events.select { |e| e.is_error? }.empty?
+      unless events.select { |e| e.is_complete? }.empty?
+        contacts = importer.get_contacts
+        break
+      end
     end
-  end
 
-== REQUIREMENTS:
+## Install
 
-JSON decoding package, currently supported are ActiveSupport::JSON and the JSON gem.
-  Neither of these are required, but if you don't have either on your system, a runtime 
-  error will be generated.
+`gem install cloudsponge`
 
-== INSTALL:
-
-sudo gem install cloudsponge
-
-== LICENSE:
+## License
 
 (The MIT License)
 

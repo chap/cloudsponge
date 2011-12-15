@@ -1,7 +1,7 @@
 module Cloudsponge
   EVENT_TYPES = %w{ INITIALIZING GATHERING SUBMITTING COMPLETE ERROR}
   EVENT_STATUSES = %w{ PENDING INPROGRESS COMPLETED ERROR }
-  
+
   class Event
     attr_accessor :event_type, :status, :value, :description
 
@@ -15,7 +15,7 @@ module Cloudsponge
 
     def initialize(event_data)
       # is it an error?
-      
+
       # get the basic data
       self.event_type = event_data['event_type']
       self.status = event_data['status']
@@ -23,7 +23,7 @@ module Cloudsponge
       self.description = event_data['description']
       self
     end
-    
+
     def is_error?
       self.status == 'ERROR'
     end
