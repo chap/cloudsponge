@@ -4,11 +4,6 @@ module Cloudsponge
   require "net/https"
   require "uri"
 
-  begin
-    require 'json'
-  rescue
-  end
-
   class Utility
 
     def self.object_to_query(object)
